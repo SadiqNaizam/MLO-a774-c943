@@ -51,7 +51,7 @@ const LibraryPage: React.FC = () => {
 
   const likedSongs = [
     { id: 'likedSong1', title: 'Favorite Tune', artist: 'Heart Beats', album: 'Love It Loud', duration: '3:30', albumArtUrl: 'https://source.unsplash.com/random/50x50?music,love&sig=ls1', isLiked: true },
-    { id: 'likedSong2', title: 'Can\'t Stop Listening', artist: 'Repeat Offender', album: 'On Loop', duration: '2:55', albumArtUrl: 'https://source.unsplash.com/random/50x50?music,repeat&sig=ls2', isLiked: true },
+    { id: 'likedSong2', title: "Can't Stop Listening", artist: 'Repeat Offender', album: 'On Loop', duration: '2:55', albumArtUrl: 'https://source.unsplash.com/random/50x50?music,repeat&sig=ls2', isLiked: true },
   ];
   
   const savedAlbums = [
@@ -64,41 +64,41 @@ const LibraryPage: React.FC = () => {
 
 
   return (
-    <div className="flex min-h-screen bg-neutral-950 text-neutral-100">
+    <div className="flex min-h-screen bg-background text-foreground">
       <Sidebar />
       <main className="ml-64 flex-1 pb-[90px] overflow-y-auto">
         <div className="p-6 space-y-6">
           <div className="flex justify-between items-center">
-            <h1 className="text-3xl font-bold text-white">Your Library</h1>
+            <h1 className="text-3xl font-bold text-foreground">Your Library</h1>
             <Dialog>
               <DialogTrigger asChild>
-                <Button variant="outline" className="bg-blue-500 hover:bg-blue-400 text-white border-blue-500">
+                <Button variant="outline" className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary">
                   <PlusCircle className="mr-2 h-4 w-4" /> Create Playlist
                 </Button>
               </DialogTrigger>
-              <DialogContent className="bg-neutral-800 border-neutral-700 text-white">
+              <DialogContent className="bg-popover border-border text-popover-foreground">
                 <DialogHeader>
                   <DialogTitle>Create New Playlist</DialogTitle>
-                  <DialogDescription>Give your new playlist a name.</DialogDescription>
+                  <DialogDescription className="text-muted-foreground">Give your new playlist a name.</DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-4 py-4">
                   <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="playlist-name" className="text-right">Name</Label>
+                    <Label htmlFor="playlist-name" className="text-right text-foreground">Name</Label>
                     <Input
                       id="playlist-name"
                       value={newPlaylistName}
                       onChange={(e) => setNewPlaylistName(e.target.value)}
-                      className="col-span-3 bg-neutral-700 border-neutral-600"
+                      className="col-span-3 bg-input border-border text-foreground"
                       placeholder="My Awesome Playlist"
                     />
                   </div>
                 </div>
                 <DialogFooter>
                   <DialogClose asChild>
-                     <Button type="button" variant="secondary" className="hover:bg-neutral-600">Cancel</Button>
+                     <Button type="button" variant="secondary" className="hover:bg-muted">Cancel</Button>
                   </DialogClose>
                   <DialogClose asChild>
-                    <Button type="submit" onClick={handleCreatePlaylist} className="bg-blue-500 hover:bg-blue-400">Create</Button>
+                    <Button type="submit" onClick={handleCreatePlaylist} className="bg-primary hover:bg-primary/90 text-primary-foreground">Create</Button>
                   </DialogClose>
                 </DialogFooter>
               </DialogContent>
@@ -106,11 +106,11 @@ const LibraryPage: React.FC = () => {
           </div>
 
           <Tabs defaultValue="playlists" className="w-full">
-            <TabsList className="bg-neutral-800">
-              <TabsTrigger value="playlists" className="data-[state=active]:bg-neutral-700 data-[state=active]:text-white">Playlists</TabsTrigger>
-              <TabsTrigger value="songs" className="data-[state=active]:bg-neutral-700 data-[state=active]:text-white">Liked Songs</TabsTrigger>
-              <TabsTrigger value="albums" className="data-[state=active]:bg-neutral-700 data-[state=active]:text-white">Albums</TabsTrigger>
-              <TabsTrigger value="artists" className="data-[state=active]:bg-neutral-700 data-[state=active]:text-white">Artists</TabsTrigger>
+            <TabsList className="bg-muted">
+              <TabsTrigger value="playlists" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground">Playlists</TabsTrigger>
+              <TabsTrigger value="songs" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground">Liked Songs</TabsTrigger>
+              <TabsTrigger value="albums" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground">Albums</TabsTrigger>
+              <TabsTrigger value="artists" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground">Artists</TabsTrigger>
             </TabsList>
             <ScrollArea className="h-[calc(100vh-280px)] mt-4"> {/* Adjust height */}
               <TabsContent value="playlists">
