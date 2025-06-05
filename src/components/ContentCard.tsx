@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { PlayCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -44,11 +44,11 @@ const ContentCard: React.FC<ContentCardProps> = ({
 
   return (
     <Card
-      className="w-full max-w-[200px] bg-neutral-800 border-neutral-700 text-neutral-100 rounded-lg overflow-hidden shadow-lg hover:bg-neutral-700 transition-colors group cursor-pointer"
+      className="w-full max-w-[200px] bg-card border-border text-card-foreground rounded-lg overflow-hidden shadow-lg hover:bg-accent/10 transition-colors group cursor-pointer"
       onClick={handleCardClick}
     >
       <CardHeader className="p-0 relative">
-        <AspectRatio ratio={1 / 1} className="bg-neutral-700">
+        <AspectRatio ratio={1 / 1} className="bg-muted"> {/* Use muted for placeholder bg */}
           <img
             src={imageUrl || '/placeholder.svg'}
             alt={title}
@@ -58,19 +58,19 @@ const ContentCard: React.FC<ContentCardProps> = ({
         </AspectRatio>
         {onPlayClick && (
           <Button
-            variant="ghost"
+            variant="ghost" // Ghost for better blending, primary for icon
             size="icon"
-            className="absolute bottom-2 right-2 bg-blue-500 hover:bg-blue-400 text-white rounded-full h-10 w-10 opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute bottom-2 right-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full h-10 w-10 opacity-0 group-hover:opacity-100 transition-opacity"
             onClick={handlePlayClick}
             aria-label={`Play ${title}`}
           >
             <PlayCircle className="h-6 w-6" />
           </Button>
-        )}
+        )}\
       </CardHeader>
       <CardContent className="p-3">
-        <CardTitle className="text-sm font-semibold truncate text-white">{title}</CardTitle>
-        {description && <CardDescription className="text-xs text-neutral-400 truncate">{description}</CardDescription>}
+        <CardTitle className="text-sm font-semibold truncate text-card-foreground">{title}</CardTitle>
+        {description && <CardDescription className="text-xs text-muted-foreground truncate">{description}</CardDescription>}
       </CardContent>
       {/* CardFooter can be used for additional actions or info if needed */}
     </Card>
