@@ -49,16 +49,16 @@ const SearchPage: React.FC = () => {
 
 
   return (
-    <div className="flex min-h-screen bg-neutral-950 text-neutral-100">
+    <div className="flex min-h-screen bg-background text-foreground">
       <Sidebar />
       <main className="ml-64 flex-1 pb-[90px] overflow-y-auto">
         <div className="p-6 space-y-6">
           <div className="relative">
-            <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-400" />
+            <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
             <Input
               type="search"
               placeholder="What do you want to listen to?"
-              className="w-full pl-10 pr-4 py-2 rounded-full bg-neutral-800 border-neutral-700 focus:ring-blue-500 text-white"
+              className="w-full pl-10 pr-4 py-2 rounded-full bg-input border-border focus:ring-ring text-foreground"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -66,11 +66,11 @@ const SearchPage: React.FC = () => {
 
           {searchTerm && (
             <Tabs defaultValue="songs" className="w-full">
-              <TabsList className="bg-neutral-800">
-                <TabsTrigger value="songs" className="data-[state=active]:bg-neutral-700 data-[state=active]:text-white">Songs</TabsTrigger>
-                <TabsTrigger value="albums" className="data-[state=active]:bg-neutral-700 data-[state=active]:text-white">Albums</TabsTrigger>
-                <TabsTrigger value="artists" className="data-[state=active]:bg-neutral-700 data-[state=active]:text-white">Artists</TabsTrigger>
-                <TabsTrigger value="playlists" className="data-[state=active]:bg-neutral-700 data-[state=active]:text-white">Playlists</TabsTrigger>
+              <TabsList className="bg-muted">
+                <TabsTrigger value="songs" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground">Songs</TabsTrigger>
+                <TabsTrigger value="albums" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground">Albums</TabsTrigger>
+                <TabsTrigger value="artists" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground">Artists</TabsTrigger>
+                <TabsTrigger value="playlists" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-foreground">Playlists</TabsTrigger>
               </TabsList>
               <ScrollArea className="h-[calc(100vh-250px)] mt-4"> {/* Adjust height as needed */}
                 <TabsContent value="songs">
@@ -104,14 +104,14 @@ const SearchPage: React.FC = () => {
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
                     {playlistsResults.map(playlist => (
                       <ContentCard key={playlist.id} {...playlist} onClick={handleCardClick} onPlayClick={() => handlePlaySong(playlist.id)} />
-                    ))}
+                    ))}\
                   </div>
                 </TabsContent>
               </ScrollArea>
             </Tabs>
           )}
           {!searchTerm && (
-            <div className="text-center text-neutral-400 pt-10">
+            <div className="text-center text-muted-foreground pt-10">
               <p>Search for your favorite songs, artists, albums, or playlists.</p>
             </div>
           )}
