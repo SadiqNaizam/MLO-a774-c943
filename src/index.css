@@ -4,88 +4,89 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%; /* Belly White #FFFFFF */
-    --foreground: 210 29% 24%; /* Dark Gray #2C3E50 */
+    /* Indigo Light Theme */
+    --background: 250 80% 97%; /* Very Light Lavender */
+    --foreground: 250 40% 30%; /* Dark Desaturated Indigo */
 
-    --card: 210 25% 96%; /* Light Gray #F0F4F8 */
-    --card-foreground: 210 29% 24%; /* Dark Gray #2C3E50 */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 250 40% 30%; /* Dark Desaturated Indigo */
 
-    --popover: 210 25% 96%; /* Light Gray #F0F4F8 */
-    --popover-foreground: 210 29% 24%; /* Dark Gray #2C3E50 */
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 250 40% 30%; /* Dark Desaturated Indigo */
 
-    --primary: 197 100% 46%; /* Doraemon Blue #00A0E9 */
-    --primary-foreground: 0 0% 100%; /* Belly White #FFFFFF */
+    --primary: 197 100% 46%; /* Doraemon Blue (Unchanged) */
+    --primary-foreground: 0 0% 100%; /* Belly White (Unchanged) */
 
-    --secondary: 210 25% 96%; /* Light Gray #F0F4F8 */
-    --secondary-foreground: 210 29% 24%; /* Dark Gray #2C3E50 for text on light gray */
+    --secondary: 250 70% 90%; /* Light Indigo */
+    --secondary-foreground: 250 40% 30%; /* Dark Desaturated Indigo */
 
-    --muted: 210 25% 96%; /* Light Gray #F0F4F8 */
-    --muted-foreground: 210 15% 45%; /* Medium Gray */
+    --muted: 250 50% 90%; /* Light Muted Indigo */
+    --muted-foreground: 250 30% 50%; /* Medium Muted Indigo */
 
-    --accent: 51 100% 50%; /* Bell Yellow #FFD700 */
-    --accent-foreground: 210 29% 24%; /* Dark Gray #2C3E50 for text on yellow */
+    --accent: 51 100% 50%; /* Bell Yellow (Unchanged) */
+    --accent-foreground: 210 29% 24%; /* Dark Gray for text on yellow (Unchanged) */
 
-    --destructive: 355 100% 45%; /* Nose Red #E60012 */
-    --destructive-foreground: 0 0% 100%; /* Belly White #FFFFFF for text on red */
+    --destructive: 355 100% 45%; /* Nose Red (Unchanged) */
+    --destructive-foreground: 0 0% 100%; /* Belly White for text on red (Unchanged) */
 
-    --border: 210 20% 90%; /* Slightly darker gray for borders */
-    --input: 210 25% 96%; /* Light Gray #F0F4F8 for input backgrounds */
-    --ring: 197 100% 46%; /* Doraemon Blue #00A0E9 for focus ring */
+    --border: 250 40% 85%; /* Lavender Border */
+    --input: 0 0% 100%; /* White Input Background */
+    --ring: 197 100% 46%; /* Doraemon Blue for focus ring (Uses Primary) */
 
-    --radius: 0.75rem; /* 12px */
+    --radius: 0.75rem; /* 12px (Unchanged) */
 
-    /* Doraemon-inspired Font */
     --font-sans: "Nunito", "Inter", "Quicksand", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-    /* Sidebar variables aligned with main theme */
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 210 29% 24%;
-    --sidebar-primary: 197 100% 46%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 51 100% 50%;
-    --sidebar-accent-foreground: 210 29% 24%;
-    --sidebar-border: 210 20% 90%;
-    --sidebar-ring: 197 100% 46%;
+    /* Sidebar variables for Light Theme */
+    --sidebar-background: 250 60% 93%; /* Slightly Darker Lavender */
+    --sidebar-foreground: 250 40% 25%; /* Darker Indigo Text */
+    --sidebar-primary: 197 100% 46%; /* Doraemon Blue (Same as main primary) */
+    --sidebar-primary-foreground: 0 0% 100%; /* White (Same as main primary-foreground) */
+    --sidebar-accent: 51 100% 50%; /* Bell Yellow (Same as main accent) */
+    --sidebar-accent-foreground: 210 29% 24%; /* Dark Gray (Same as main accent-foreground) */
+    --sidebar-border: 250 40% 80%; /* Slightly darker lavender border for sidebar */
+    --sidebar-ring: 197 100% 46%; /* Doraemon Blue (Same as main ring) */
   }
 
   .dark {
-    --background: 220 30% 10%; /* Deep Indigo/Navy Blue */
-    --foreground: 210 20% 90%; /* Light Gray */
+    /* Indigo Dark Theme */
+    --background: 250 50% 12%; /* Deep Indigo */
+    --foreground: 250 40% 88%; /* Light Lavender-Gray */
 
-    --card: 220 30% 15%;
-    --card-foreground: 210 20% 90%;
+    --card: 250 45% 18%; /* Slightly Lighter Indigo */
+    --card-foreground: 250 40% 88%; /* Light Lavender-Gray */
 
-    --popover: 220 30% 15%;
-    --popover-foreground: 210 20% 90%;
+    --popover: 250 45% 15%; /* Slightly Darker Indigo than Card */
+    --popover-foreground: 250 40% 88%; /* Light Lavender-Gray */
 
-    --primary: 197 100% 55%; /* Brighter Doraemon Blue */
-    --primary-foreground: 210 29% 24%; /* Dark Gray text */
+    --primary: 197 100% 55%; /* Brighter Doraemon Blue (Unchanged) */
+    --primary-foreground: 210 29% 24%; /* Dark Gray text (Unchanged) */
+    
+    --secondary: 250 40% 25%; /* Indigo */
+    --secondary-foreground: 250 40% 88%; /* Light Lavender-Gray */
 
-    --secondary: 220 25% 20%;
-    --secondary-foreground: 210 20% 90%;
+    --muted: 250 35% 25%; /* Muted Indigo */
+    --muted-foreground: 250 30% 65%; /* Medium Light Muted Indigo */
 
-    --muted: 220 25% 20%;
-    --muted-foreground: 210 15% 65%; /* Medium-light Gray */
+    --accent: 51 100% 60%; /* Brighter Bell Yellow (Unchanged) */
+    --accent-foreground: 210 29% 24%; /* Dark Gray text (Unchanged) */
 
-    --accent: 51 100% 60%; /* Brighter Bell Yellow */
-    --accent-foreground: 210 29% 24%; /* Dark Gray text */
+    --destructive: 355 80% 50%; /* Slightly Desaturated Nose Red (Unchanged) */
+    --destructive-foreground: 0 0% 100%; /* White text (Unchanged) */
 
-    --destructive: 355 80% 50%; /* Slightly Desaturated Nose Red */
-    --destructive-foreground: 0 0% 100%; /* White text */
+    --border: 250 30% 30%; /* Indigo Border */
+    --input: 250 40% 22%; /* Dark Indigo Input Background */
+    --ring: 197 100% 55%; /* Brighter Doraemon Blue for focus ring (Uses Primary) */
 
-    --border: 220 25% 25%;
-    --input: 220 25% 25%;
-    --ring: 197 100% 55%; /* Brighter Doraemon Blue for focus ring */
-
-    /* Sidebar variables aligned with dark main theme */
-    --sidebar-background: 220 30% 10%;
-    --sidebar-foreground: 210 20% 90%;
-    --sidebar-primary: 197 100% 55%;
-    --sidebar-primary-foreground: 210 29% 24%;
-    --sidebar-accent: 51 100% 60%;
-    --sidebar-accent-foreground: 210 29% 24%;
-    --sidebar-border: 220 25% 25%;
-    --sidebar-ring: 197 100% 55%;
+    /* Sidebar variables for Dark Theme */
+    --sidebar-background: 250 40% 15%; /* Indigo for Sidebar */
+    --sidebar-foreground: 250 35% 85%; /* Light Lavender-Gray Text */
+    --sidebar-primary: 197 100% 55%; /* Brighter Doraemon Blue */
+    --sidebar-primary-foreground: 210 29% 24%; /* Dark Gray text */
+    --sidebar-accent: 51 100% 60%; /* Brighter Bell Yellow */
+    --sidebar-accent-foreground: 210 29% 24%; /* Dark Gray text */
+    --sidebar-border: 250 30% 28%; /* Slightly darker Indigo border for sidebar */
+    --sidebar-ring: 197 100% 55%; /* Brighter Doraemon Blue */
   }
 }
 
