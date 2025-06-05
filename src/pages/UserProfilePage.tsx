@@ -45,16 +45,16 @@ const UserProfilePage: React.FC = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-neutral-950 text-neutral-100">
+    <div className="flex min-h-screen bg-background text-foreground">
       <Sidebar />
       <main className="ml-64 flex-1 pb-[90px] overflow-y-auto">
         <div className="p-6 md:p-10 max-w-3xl mx-auto space-y-8">
-          <h1 className="text-3xl font-bold text-white">User Profile</h1>
+          <h1 className="text-3xl font-bold text-foreground">User Profile</h1>
 
-          <Card className="bg-neutral-900 border-neutral-700">
+          <Card className="bg-card border-border text-card-foreground">
             <CardHeader>
-              <CardTitle className="text-white">Profile Information</CardTitle>
-              <CardDescription className="text-neutral-400">View and update your account details.</CardDescription>
+              <CardTitle className="text-card-foreground">Profile Information</CardTitle>
+              <CardDescription className="text-muted-foreground">View and update your account details.</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleProfileUpdate} className="space-y-6">
@@ -63,58 +63,58 @@ const UserProfilePage: React.FC = () => {
                     <AvatarImage src="https://source.unsplash.com/random/100x100?avatar,user&sig=profile" alt="@username" />
                     <AvatarFallback>DF</AvatarFallback>
                   </Avatar>
-                  <Button variant="outline" className="border-neutral-600 hover:bg-neutral-700">Change Avatar</Button>
+                  <Button variant="outline" className="border-border hover:bg-accent/10 text-accent-foreground">Change Avatar</Button>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="username" className="text-neutral-300">Username</Label>
+                  <Label htmlFor="username" className="text-foreground">Username</Label>
                   <Input
                     id="username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    className="bg-neutral-800 border-neutral-700 text-white"
+                    className="bg-input border-border text-foreground"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-neutral-300">Email</Label>
+                  <Label htmlFor="email" className="text-foreground">Email</Label>
                   <Input
                     id="email"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="bg-neutral-800 border-neutral-700 text-white"
+                    className="bg-input border-border text-foreground"
                   />
                 </div>
-                <Button type="submit" className="bg-blue-500 hover:bg-blue-400 text-white">Save Changes</Button>
+                <Button type="submit" className="bg-primary hover:bg-primary/90 text-primary-foreground">Save Changes</Button>
               </form>
             </CardContent>
           </Card>
 
-          <Card className="bg-neutral-900 border-neutral-700">
+          <Card className="bg-card border-border text-card-foreground">
             <CardHeader>
-              <CardTitle className="text-white">Preferences</CardTitle>
-              <CardDescription className="text-neutral-400">Manage your application settings.</CardDescription>
+              <CardTitle className="text-card-foreground">Preferences</CardTitle>
+              <CardDescription className="text-muted-foreground">Manage your application settings.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between">
-                <Label className="text-neutral-300">Theme</Label>
+                <Label className="text-foreground">Theme</Label>
                 <ThemeSwitcherControl />
               </div>
               {/* Add more preferences here */}
             </CardContent>
           </Card>
           
-          <Card className="bg-neutral-900 border-neutral-700">
+          <Card className="bg-card border-border text-card-foreground">
             <CardHeader>
-              <CardTitle className="text-white">Account Actions</CardTitle>
+              <CardTitle className="text-card-foreground">Account Actions</CardTitle>
             </CardHeader>
             <CardContent>
                 <Button variant="destructive" onClick={handleLogout} className="w-full sm:w-auto">
                     Log Out
                 </Button>
-                 <p className="text-xs text-neutral-500 mt-4">
-                    For more information, visit our <a href="/terms" className="underline hover:text-blue-400">Terms of Service</a> or <a href="/help" className="underline hover:text-blue-400">Help Center</a>.
+                 <p className="text-xs text-muted-foreground mt-4">
+                    For more information, visit our <a href="/terms" className="underline hover:text-primary">Terms of Service</a> or <a href="/help" className="underline hover:text-primary">Help Center</a>.
                 </p>
             </CardContent>
           </Card>
