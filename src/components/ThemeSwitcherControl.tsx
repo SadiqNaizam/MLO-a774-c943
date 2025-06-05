@@ -18,13 +18,16 @@ const ThemeSwitcherControl: React.FC<ThemeSwitcherControlProps> = () => {
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
         setCurrentTheme(newTheme);
         // setTheme(newTheme); // With next-themes
-        // For now, just log. In a real app, this would apply theme changes.
         console.log("Theme switched to:", newTheme); 
-        // Apply theme to body or html tag (basic example, usually handled by a theme provider)
         document.documentElement.classList.toggle('dark', newTheme === 'dark');
     };
     
-    // Effect to set initial theme class (basic example)
+    React.useEffect(() => {
+        const isDark = document.documentElement.classList.contains('dark');
+        setCurrentTheme(isDark ? 'dark' : 'light');
+    }, []); // Check initial theme only once
+
+    // Effect to apply theme class when currentTheme state changes (e.g. from initial load or toggle)
     React.useEffect(() => {
         document.documentElement.classList.toggle('dark', currentTheme === 'dark');
     }, [currentTheme]);
@@ -34,14 +37,14 @@ const ThemeSwitcherControl: React.FC<ThemeSwitcherControlProps> = () => {
             variant="outline"
             size="icon"
             onClick={toggleTheme}
-            className="border-neutral-700 text-neutral-400 hover:text-white hover:bg-neutral-800"
+            className="border-border text-muted-foreground hover:text-foreground hover:bg-accent/10"
             aria-label={`Switch to ${currentTheme === 'light' ? 'dark' : 'light'} mode`}
         >
             {currentTheme === 'light' ? (
                 <Moon className="h-[1.2rem] w-[1.2rem]" />
             ) : (
                 <Sun className="h-[1.2rem] w-[1.2rem]" />
-            )}
+            )}\
         </Button>
     );
 };
