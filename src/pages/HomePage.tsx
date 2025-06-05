@@ -45,12 +45,12 @@ const HomePage: React.FC = () => {
   ];
 
   return (
-    <div className="flex min-h-screen bg-neutral-950 text-neutral-100">
+    <div className="flex min-h-screen bg-background text-foreground">
       <Sidebar />
       <main className="ml-64 flex-1 pb-[90px] overflow-y-auto">
         <div className="p-6 space-y-10">
           <section>
-            <Label className="text-2xl font-bold mb-4 block text-white">New Releases</Label>
+            <Label className="text-2xl font-bold mb-4 block text-foreground">New Releases</Label>
             <ScrollArea className="w-full whitespace-nowrap">
               <div className="flex space-x-4 pb-4">
                 {newReleases.map(item => (
@@ -71,7 +71,7 @@ const HomePage: React.FC = () => {
           </section>
 
           <section>
-            <Label className="text-2xl font-bold mb-4 block text-white">Featured Playlists</Label>
+            <Label className="text-2xl font-bold mb-4 block text-foreground">Featured Playlists</Label>
             <ScrollArea className="w-full whitespace-nowrap">
               <div className="flex space-x-4 pb-4">
                 {featuredPlaylists.map(item => (
